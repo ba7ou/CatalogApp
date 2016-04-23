@@ -13,23 +13,24 @@ This app uses
 These dependencies must be installed before you can run the app. The easiest way to do so is by using [pip](https://pypi.python.org/pypi/pip). Simply run the following commands:
 
   ```pip install Flask
+
 	```pip install SQLAlchemy
 
 The app uses Google and Facebook for authentication as the next step you have to obtain a client id and client secret, you can use the following documentation:
-(https://developers.google.com/identity/sign-in/web/devconsole-project)
-(https://developers.facebook.com/docs/apps/register)
+- https://developers.google.com/identity/sign-in/web/devconsole-project
+- https://developers.facebook.com/docs/apps/register
 
 
 
 Next you have to create the database. Run
 
-	```python database_setup.py
+	python database_setup.py
 
 ## Run the app
 
 To start the app simply run
 
-	```python application.py
+	python application.py
 
 ## What's included
 ```
@@ -75,4 +76,3 @@ catalog/
 ## Copyright and license
 
 Code and documentation copyright 2011-2015 Twitter, Inc. Code released under [the MIT license]
-# CatalogApp
