@@ -1,0 +1,25 @@
+<div class="container-fluid">
+	<div class="row vertical-align">
+		<div class="col-sm-6">
+			<a href="{{url_for('showCatalog')}}">
+				<h1>Catalog App</h1>
+			</a>
+		</div>
+		<div class="col-sm-6 text-right">
+			{%if 'username' not in session %}
+			<a href="{{url_for('showLogin')}}">
+				<button type="button" class="btn btn-warning btn-lg">Sign in | Login</button>
+			</a>
+			{% else %}
+			<div class="login">
+			<img src="{{session['picture']}}" alt="test" style="width: 45px; height: 45px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;" />
+				Logged as: {{session['username']}}
+			</img>
+			<a href="{{url_for('disconnect')}}">
+				<button type="button" class="btn btn-default btn-lg">Disconnect</button>
+			</a>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

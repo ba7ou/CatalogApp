@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row banner menu">
+		<div class="col-md-12">
+			<ol class="breadcrumb">
+  			<li><a href="{{url_for('showCatalog')}}">Home</a></li>
+				<li class="active">New Item</li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h2>Create a New Item</h2>
+		</div>
+	</div>
+	<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							<li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+		{% endwith %}
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the item">
+				</div>
+				<div class="form-group">
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the item"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="category">Category:</label>
+					<select name="category" size="1">
+				    {% for i in category %}
+				      <option value="{{i.id}}">{{i.name}}</option>
+				    {% endfor %}
+				  </select>
+					<button type="submit" class="btn btn-primary pull-right" id="submit" type="submit" >
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Create</button>
+			</form>
+		</div>
+		</div>
+	</div>
+{% endblock %}

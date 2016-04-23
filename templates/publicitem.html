@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+	<div class="row banner menu">
+		<div class="col-md-12">
+			<ol class="breadcrumb">
+  			<li><a href="{{url_for('showCatalog')}}">Home</a></li>
+  			<li><a href="{{url_for('showCategory', category_name=category.name)}}">{{ category.name }}</a></li>
+				<li class="active">{{item.name}}</li>
+			</ol>
+		</div>
+	</div>
+
+<div class="row">
+<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</div>
+</row>
+
+	{% if items !=[] %}
+		<div class="row row-margin">
+			<div class="col-md-1"></div>
+			<div class="col-md-6">
+							<div class="panel panel-primary">
+								<div class="panel-heading">{{item.name}}</div>
+								<div class="panel-body"><p>{{item.description}}</p></div>
+							</div>
+			</div>
+			<div class="col-md-3">
+				<figure class="creator">
+					<div class="well well-lg">
+						<img src="{{creator.picture}}" alt="test" style = "width: 45px; height: 45px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"/>
+						<figcaption>Created by <strong>{{creator.name}}</strong></figcaption>
+					</div>
+				</figure>
+			</div>
+		</div>
+	</div>
+
+	{% endif %}
+
+{% endblock %}

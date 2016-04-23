@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row banner menu">
+		<div class="col-md-12">
+			<ol class="breadcrumb">
+				<li><a href="{{url_for('showCatalog')}}">Home</a></li>
+				<li class="active">Edit Item</li>
+			</ol>
+		</div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h2>Edit Item</h2>
+		</div>
+	</div>
+	<div class = 'flash'>
+		{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							<li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+		{% endwith %}
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+				<form action="#" method = "post">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type ="text" maxlength="100" class="form-control" name="name" value="{{item_name.name}}">
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<textarea class="form-control" maxlength="250" rows="3" name="description">{{item_name.description}}</textarea>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-default" id="submit" type="submit">
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+				</form>
+				<a href = '{{url_for('showCatalog')}}'>
+				<button class="btn btn-default delete">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
+				</button>
+				</div>
+			</div>
+		</div>
+{% endblock %}
