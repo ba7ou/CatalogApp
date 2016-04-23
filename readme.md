@@ -12,9 +12,9 @@ This app uses
 
 These dependencies must be installed before you can run the app. The easiest way to do so is by using [pip](https://pypi.python.org/pypi/pip). Simply run the following commands:
 
-  ```pip install Flask
+  pip install Flask
 
-	```pip install SQLAlchemy
+	pip install SQLAlchemy
 
 The app uses Google and Facebook for authentication as the next step you have to obtain a client id and client secret, you can use the following documentation:
 - https://developers.google.com/identity/sign-in/web/devconsole-project
