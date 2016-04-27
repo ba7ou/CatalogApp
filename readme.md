@@ -1,6 +1,7 @@
 # Udacity Fullstack Nanodegree Project 3 - Catalog App
 
 This app create, update and delete items in various predefined categories.
+[Example running on Heroku](http://simple-catalog-app.herokuapp.com/catalog/)
 
 ## Setup
 
